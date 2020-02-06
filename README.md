@@ -11,10 +11,6 @@
 <br/>
 
 <div align="center">
-  <!-- CodeClimate -->
-  <a href="https://codeclimate.com/github/pankod/next-boilerplate/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/maintainability" />
-  </a>
   <!-- TestCoverage -->
   <a href="https://codeclimate.com/github/pankod/next-boilerplate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/test_coverage" /></a>
   <!-- Build Status -->
