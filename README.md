@@ -1,3 +1,8 @@
+##Decsription
+- This project is based on Pankod - a site generator using Nextjs: https://pankod.github.io/next-boilerplate/docs/setup
+- We use PunkAPI for mocking api for the project: https://punkapi.com
+- Other documents can be found here: https://drive.google.com/drive/u/2/folders/1BuvO2plrAwODvgdTIk3WLahoRX6OiZa3
+
 
 <img src="banner.jpg" alt="Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass." align="center" />
 
