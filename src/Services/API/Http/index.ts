@@ -12,7 +12,7 @@ const {
     publicRuntimeConfig: { API_KEY, API_URL },
 } = getConfig();
 
-const BaseUrl = `${API_URL}/api`;
+const BaseUrl = `${API_URL}`;
 
 export const Http = {
     Request: async <A>(

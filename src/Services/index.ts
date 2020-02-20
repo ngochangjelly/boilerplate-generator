@@ -2,3 +2,5 @@
 export { Http } from "@Services/API/Http";
 export { PlanetaryService } from "@Services/API/Planetary";
 // #endregion Local Imports
+export { BeersService } from "@Services/API/Beers";
+// #endregion Local Imports

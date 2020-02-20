@@ -12,10 +12,12 @@ import { IHomePage } from "@Interfaces";
 // #endregion Interface Imports
 
 export const HomeActions = {
-    Map: (payload: {}) => ({
-        payload,
-        type: ActionConsts.Home.SetReducer,
-    }),
+    Map: (payload: {}) => {
+        return {
+            payload,
+            type: ActionConsts.Home.SetReducer,
+        };
+    },
 
     Reset: () => ({
         type: ActionConsts.Home.ResetReducer,

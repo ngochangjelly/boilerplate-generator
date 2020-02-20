@@ -18,8 +18,10 @@ import {
     ApodButton,
 } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
+import { BeersService } from "@Services/API/Beers";
 import { HomeActions } from "@Actions";
-import { Heading, LocaleButton } from "@Components";
+import { Ticket, Heading, LocaleButton, Layout } from "@Components";
+
 // #endregion Local Imports
 
 // #region Interface Imports
@@ -45,7 +47,10 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 
     return (
         <Container>
-            <Top>
+            <Layout>
+                <Ticket />
+            </Layout>
+            {/* <Top>
                 <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
             </Top>
             <Middle>
@@ -56,7 +61,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                 </MiddleLeft>
                 <MiddleRight>
                     <TopText>{t("common:Hello")}</TopText>
-                    <Heading text={t("common:World")} />
                     <Apod>
                         <ApodButton
                             onClick={() => {
@@ -71,7 +75,16 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                         </ApodButton>
                     </Apod>
                 </MiddleRight>
-            </Middle>
+            </Middle> */}
+            <Apod>
+                <ApodButton
+                    onClick={() => {
+                        BeersService.GetBeers();
+                    }}
+                >
+                    Discover Space
+                </ApodButton>
+            </Apod>
         </Container>
     );
 };

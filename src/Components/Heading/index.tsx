@@ -19,6 +19,7 @@ const Heading: React.FunctionComponent<IHeading.IProps> = (
         <div className="title">
             <span className="title__back">{text}</span>
             <span className="title__front">{text}</span>
+            asdsadad
         </div>
     );
 };
