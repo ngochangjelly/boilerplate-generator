@@ -50,32 +50,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
             <Layout>
                 <Ticket />
             </Layout>
-            {/* <Top>
-                <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
-            </Top>
-            <Middle>
-                <MiddleLeft>
-                    <MiddleLeftButtons>
-                        {renderLocaleButtons(i18n.language)}
-                    </MiddleLeftButtons>
-                </MiddleLeft>
-                <MiddleRight>
-                    <TopText>{t("common:Hello")}</TopText>
-                    <Apod>
-                        <ApodButton
-                            onClick={() => {
-                                dispatch(
-                                    HomeActions.GetApod({
-                                        params: { hd: false },
-                                    })
-                                );
-                            }}
-                        >
-                            Discover Space
-                        </ApodButton>
-                    </Apod>
-                </MiddleRight>
-            </Middle> */}
             <Apod>
                 <ApodButton
                     onClick={() => {

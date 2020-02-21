@@ -10,7 +10,6 @@ export const BeersService = {
         } catch (error) {
             response = [];
         }
-        console.log("TCL: response", response);
         return response;
     },
 };

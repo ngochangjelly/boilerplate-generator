@@ -12,7 +12,7 @@ const {
     publicRuntimeConfig: { API_KEY, API_URL },
 } = getConfig();
 
-const BaseUrl = `${API_URL}`;
+const BaseUrl = `https://api.punkapi.com/v2/`;
 
 export const Http = {
     Request: async <A>(
