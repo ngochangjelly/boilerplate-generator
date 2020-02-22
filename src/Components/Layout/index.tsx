@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import "./styles.scss";
 import { LayoutProps } from "./Layout";
 
 const Layout: React.FunctionComponent<LayoutProps> = ({

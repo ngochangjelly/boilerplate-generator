@@ -23,11 +23,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
     const [beers, setBeers]: any[] = useState([]);
 
     useEffect(() => {
-        // BeersService.GetBeers().then(res => {
-        //     console.log("TCL: res", res);
-        //     if (prevBeers !== beers) {
-        //         // setBeers(res);
-        //     }
         BeersService.GetBeers().then(res => {
             setBeers(res);
         });

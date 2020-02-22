@@ -1,12 +1,3 @@
-.container {
-    // position: absolute;
-    // height: 300px;
-    // width: 600px;
-    // top: 60px;
-    // left: calc(50% - 300px);
-    display: flex;
-  }
-
   .card {
     display: flex;
     height: 280px;
@@ -21,7 +12,7 @@
   }
 
   .card:not(:first-child) {
-      margin-left: -50px;
+      margin-left: -5px;
   }
 
   .card:hover {
