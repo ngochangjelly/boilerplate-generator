@@ -14,7 +14,7 @@ const Ticket: React.FunctionComponent<ITicket.IProps> = (
     props
 ): JSX.Element => {
     const { beer }: any = props;
-    const { name } = beer;
+    const { name, image_url } = beer;
     return (
         <div className="card">
             <h3 className="title">{name}</h3>
@@ -22,10 +22,8 @@ const Ticket: React.FunctionComponent<ITicket.IProps> = (
                 <div className="emptybar" />
                 <div className="filledbar" />
             </div>
-            <div className="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <circle className="stroke" cx="60" cy="60" r="50" />
-                </svg>
+            <div className="beer-image">
+                <img data-loading="lazy" src={image_url} />
             </div>
         </div>
     );

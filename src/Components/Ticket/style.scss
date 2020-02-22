@@ -5,10 +5,11 @@
     background-color: #17141d;
     border-radius: 10px;
     box-shadow: -1rem 0 3rem #000;
-  /*   margin-left: -50px; */
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
+    justify-content: center;
+    padding: 12px;
   }
 
   .card:not(:first-child) {
@@ -30,13 +31,18 @@
     color: white;
     font-weight: 300;
     position: absolute;
-    left: 20px;
+    left: 10%;
+    right: 10%;
     top: 15px;
+    height: 40px;
+    word-wrap: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .bar {
     position: absolute;
-    top: 100px;
+    top: 80px;
     left: 20px;
     height: 5px;
     width: 150px;
@@ -86,3 +92,14 @@
     stroke-dashoffset: 100;
     transition: 0.6s ease-out;
   }
+.beer-image{
+    position: absolute;
+    bottom: 12px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    img{
+        height: 100%
+    }
+}
