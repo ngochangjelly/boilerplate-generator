@@ -1,26 +1,16 @@
 // #region Global Imports
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import { useSelector, useDispatch } from "react-redux";
 // #endregion Global Imports
 
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
-import {
-    Container,
-    Top,
-    TopText,
-    Middle,
-    MiddleLeft,
-    MiddleLeftButtons,
-    MiddleRight,
-    Apod,
-    ApodButton,
-} from "@Styled/Home";
+import { Container } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
 import { BeersService } from "@Services/API/Beers";
 import { HomeActions } from "@Actions";
-import { Ticket, Heading, LocaleButton, Layout } from "@Components";
+import { Ticket, Layout } from "@Components";
 
 // #endregion Local Imports
 
@@ -28,37 +18,27 @@ import { Ticket, Heading, LocaleButton, Layout } from "@Components";
 import { IHomePage, ReduxNextPageContext } from "@Interfaces";
 // #endregion Interface Imports
 
-const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
-    t,
-    i18n,
-}) => {
+const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
     const home = useSelector((state: IStore) => state.home);
-    const dispatch = useDispatch();
+    const [beers, setBeers]: any[] = useState([]);
 
-    const renderLocaleButtons = (activeLanguage: string) =>
-        ["en", "es", "tr"].map(lang => (
-            <LocaleButton
-                key={lang}
-                lang={lang}
-                isActive={activeLanguage === lang}
-                onClick={() => i18n.changeLanguage(lang)}
-            />
-        ));
-
+    useEffect(() => {
+        // BeersService.GetBeers().then(res => {
+        //     console.log("TCL: res", res);
+        //     if (prevBeers !== beers) {
+        //         // setBeers(res);
+        //     }
+        BeersService.GetBeers().then(res => {
+            setBeers(res);
+        });
+    }, []);
     return (
         <Container>
             <Layout>
-                <Ticket />
+                {beers.map((beer: any) => {
+                    return <Ticket beer={beer} />;
+                })}
             </Layout>
-            <Apod>
-                <ApodButton
-                    onClick={() => {
-                        BeersService.GetBeers();
-                    }}
-                >
-                    Discover Space
-                </ApodButton>
-            </Apod>
         </Container>
     );
 };

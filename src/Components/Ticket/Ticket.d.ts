@@ -1,5 +1,7 @@
 declare namespace ITicket {
-    export interface IProps {}
+    export interface IProps {
+        beer: any;
+    }
 }
 
 export { ITicket };

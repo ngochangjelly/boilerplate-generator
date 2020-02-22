@@ -13,10 +13,12 @@ import { ITicket } from "./Ticket";
 const Ticket: React.FunctionComponent<ITicket.IProps> = (
     props
 ): JSX.Element => {
+    const { beer }: any = props;
+    const { name } = beer;
     return (
         <div className="container">
             <div className="card">
-                <h3 className="title">Card 2</h3>
+                <h3 className="title">{name}</h3>
                 <div className="bar">
                     <div className="emptybar" />
                     <div className="filledbar" />
