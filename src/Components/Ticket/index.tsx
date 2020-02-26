@@ -1,6 +1,7 @@
 // #region Global Imports
 import * as React from "react";
 // #endregion Global Imports
+import { useRouter } from "next/router";
 
 // #region Local Imports
 import "./style.scss";
@@ -13,10 +14,14 @@ import { ITicket } from "./Ticket";
 const Ticket: React.FunctionComponent<ITicket.IProps> = (
     props
 ): JSX.Element => {
+    const router = useRouter();
     const { beer }: any = props;
     const { name, image_url } = beer;
+    const handleClick = () => {
+        router.push("/beer/1");
+    };
     return (
-        <div className="card">
+        <div className="card" onClick={handleClick}>
             <h3 className="title">{name}</h3>
             <div className="bar">
                 <div className="emptybar" />

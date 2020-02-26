@@ -8,9 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { withTranslation } from "@Server/i18n";
 import { Container } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
-import { BeersService } from "@Services/API/Beers";
 import { HomeActions } from "@Actions";
-import { Ticket, Layout, Heading } from "@Components";
 
 // #endregion Local Imports
 
@@ -18,28 +16,12 @@ import { Ticket, Layout, Heading } from "@Components";
 import { IHomePage, ReduxNextPageContext } from "@Interfaces";
 // #endregion Interface Imports
 
-const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
+const BeerDetail: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
     const home = useSelector((state: IStore) => state.home);
-    const [beers, setBeers]: any[] = useState([]);
-
-    useEffect(() => {
-        BeersService.GetBeers().then(res => {
-            setBeers(res);
-        });
-    }, []);
-    return (
-        <Container>
-            <Heading text="Beer craft" />
-            <Layout>
-                {beers.map((beer: any) => {
-                    return <Ticket beer={beer} />;
-                })}
-            </Layout>
-        </Container>
-    );
+    return <Container>hello</Container>;
 };
 
-Home.getInitialProps = async (
+BeerDetail.getInitialProps = async (
     ctx: ReduxNextPageContext
 ): Promise<IHomePage.InitialProps> => {
     await ctx.store.dispatch(
@@ -50,6 +32,6 @@ Home.getInitialProps = async (
     return { namespacesRequired: ["common"] };
 };
 
-const Extended = withTranslation("common")(Home);
+const Extended = withTranslation("common")(BeerDetail);
 
 export default Extended;

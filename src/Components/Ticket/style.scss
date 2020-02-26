@@ -10,6 +10,9 @@
     left: 0px;
     justify-content: center;
     padding: 12px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
   }
 
   .card:not(:first-child) {
@@ -21,7 +24,7 @@
     transition: 0.4s ease-out;
   }
 
-  .card:hover ~ .card {
+  .card:hover + .card {
     position: relative;
     left: 50px;
     transition: 0.4s ease-out;
@@ -35,9 +38,10 @@
     right: 10%;
     top: 15px;
     height: 40px;
-    word-wrap: wrap;
-    overflow: hidden;
     text-overflow: ellipsis;
+    /* Needed to make it work */
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .bar {
