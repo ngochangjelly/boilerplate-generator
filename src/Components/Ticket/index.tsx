@@ -16,9 +16,9 @@ const Ticket: React.FunctionComponent<ITicket.IProps> = (
 ): JSX.Element => {
     const router = useRouter();
     const { beer }: any = props;
-    const { name, image_url } = beer;
+    const { name, image_url, id } = beer;
     const handleClick = () => {
-        router.push("/beer/1");
+        router.push(`/beer/${id}`);
     };
     return (
         <div className="card" onClick={handleClick}>

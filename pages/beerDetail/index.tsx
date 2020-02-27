@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { withTranslation } from "@Server/i18n";
 import { Container } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
+import { BeersService } from "@Services/API/Beers";
 import { HomeActions } from "@Actions";
 
 // #endregion Local Imports
@@ -17,7 +18,13 @@ import { IHomePage, ReduxNextPageContext } from "@Interfaces";
 // #endregion Interface Imports
 
 const BeerDetail: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
-    const home = useSelector((state: IStore) => state.home);
+    // https://api.punkapi.com/v2/beers/1
+    const [beer, setBeer]: any[] = useState([]);
+    useEffect(() => {
+        BeersService.GetBeers().then(res => {
+            setBeer(res);
+        });
+    }, []);
     return <Container>hello</Container>;
 };
 
