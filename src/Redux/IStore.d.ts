@@ -1,7 +1,8 @@
 // #region Interface Imports
-import { IHomePage } from "@Interfaces";
+import { IHomePage, IDetails } from "@Interfaces";
 // #endregion Interface Imports
 
 export interface IStore {
+    details: IDetails.IStateProps;
     home: IHomePage.IStateProps;
 }
