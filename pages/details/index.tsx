@@ -19,14 +19,17 @@ import { ReduxNextPageContext, IDetails } from "@Interfaces";
 // #endregion Interface Imports
 
 export const Details: NextPage<IDetails.IProps, IDetails.InitialProps> = () => {
-    const details = useSelector((state: IStore) => state.details);
     const [detail, setDetail]: any[] = useState([]);
+    const router = useRouter();
+    const { id } = router.query;
 
     useEffect(() => {
+        console.log("TCL: id", router.query);
         BeerDetailsService.GetRandomBeer().then(r => {
             setDetail(r);
         });
-    }, []);
+    }, [router.query]);
+
 
     return (
         <Container>

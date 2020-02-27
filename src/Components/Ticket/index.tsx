@@ -16,19 +16,19 @@ const Ticket: React.FunctionComponent<ITicket.IProps> = (
 ): JSX.Element => {
     const router = useRouter();
     const { beer }: any = props;
-    const { name, image_url, id } = beer;
+    const { name, image_url: imageUrl, id } = beer;
     const handleClick = () => {
-        router.push(`/beer/${id}`);
+        router.push({ pathname: `/beer`, query: { id } });
     };
     return (
-        <div className="card" onClick={handleClick}>
+        <div className="card" onClick={handleClick} role="button">
             <h3 className="title">{name}</h3>
             <div className="bar">
                 <div className="emptybar" />
                 <div className="filledbar" />
             </div>
             <div className="beer-image">
-                <img data-loading="lazy" src={image_url} />
+                <img data-loading="lazy" src={imageUrl} alt="beer-image" />
             </div>
         </div>
     );
