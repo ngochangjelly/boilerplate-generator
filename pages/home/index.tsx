@@ -31,8 +31,9 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
         <Container>
             <Heading text="Beer craft" />
             <Layout>
+                <a href="/Details"> Get your random beer </a>
                 {beers.map((beer: any) => {
-                    return <Ticket beer={beer} />;
+                    return <Ticket key={beer.id} beer={beer} />;
                 })}
             </Layout>
         </Container>

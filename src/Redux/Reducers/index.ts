@@ -4,8 +4,10 @@ import { combineReducers } from "redux";
 
 // #region Local Imports
 import { HomeReducer } from "./home";
+import { DetailsReducer } from "./details";
 // #endregion Local Imports
 
 export default combineReducers({
+    details: DetailsReducer,
     home: HomeReducer,
 });
