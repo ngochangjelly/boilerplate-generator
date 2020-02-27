@@ -1,15 +1,13 @@
 // #region Global Imports
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
-import { useSelector, useDispatch } from "react-redux";
 // #endregion Global Imports
 
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
-import { IStore } from "@Redux/IStore";
-import { DetailsActions } from "@Actions";
 import { BeerDetailsService } from "@Services/API/BeerDetails";
 import { Container } from "@Styled/Home";
+import { useRouter } from "next/router";
 import { Layout } from "@Components";
 import "./style.scss";
 // #endregion Local Imports
@@ -21,15 +19,21 @@ import { ReduxNextPageContext, IDetails } from "@Interfaces";
 export const Details: NextPage<IDetails.IProps, IDetails.InitialProps> = () => {
     const [detail, setDetail]: any[] = useState([]);
     const router = useRouter();
-    const { id } = router.query;
+    const {
+        query: { id, random },
+    } = useRouter();
 
     useEffect(() => {
-        console.log("TCL: id", router.query);
-        BeerDetailsService.GetRandomBeer().then(r => {
-            setDetail(r);
-        });
-    }, [router.query]);
-
+        if (random === "true") {
+            BeerDetailsService.GetRandomBeer().then(r => {
+                setDetail(r);
+            });
+        } else {
+            BeerDetailsService.GetBeerById(id).then(r => {
+                setDetail(r);
+            });
+        }
+    }, [id, random, router.query]);
 
     return (
         <Container>

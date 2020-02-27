@@ -30,7 +30,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
         });
     }, []);
     const handleClick = () => {
-        router.push("/Details");
+        router.push({ pathname: `/beer`, query: { random: "true" } });
     };
     return (
         <Container>

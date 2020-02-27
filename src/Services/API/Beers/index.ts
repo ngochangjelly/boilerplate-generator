@@ -12,14 +12,4 @@ export const BeersService = {
         }
         return response;
     },
-    GetBeerById: async id => {
-        let response;
-        try {
-            response = await Http.Request("GET", `beer/${id}`);
-        } catch (error) {
-            response = [];
-        }
-        return response;
-    },
 };
-

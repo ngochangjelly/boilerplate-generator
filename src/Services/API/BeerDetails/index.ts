@@ -12,7 +12,7 @@ export const BeerDetailsService = {
         }
         return res;
     },
-    GetBeerById: async (id: Number) => {
+    GetBeerById: async (id: any) => {
         let res;
         try {
             // fetch beer
