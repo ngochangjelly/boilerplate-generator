@@ -15,6 +15,7 @@ export const BeerDetailsService = {
     GetBeerById: async (id: Number) => {
         let res;
         try {
+            // fetch beer
             res = await Http.Request("GET", `beers/${id}`);
         } catch (error) {
             res = [];
