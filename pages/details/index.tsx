@@ -1,10 +1,13 @@
 // #region Global Imports
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
+import { useSelector, useDispatch } from "react-redux";
+// #endregion Global Imports
 
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
+import { IStore } from "@Redux/IStore";
+import { DetailsActions } from "@Actions";
 import { BeerDetailsService } from "@Services/API/BeerDetails";
 import { Container } from "@Styled/Home";
 import { Layout } from "@Components";
@@ -27,12 +30,13 @@ export const Details: NextPage<IDetails.IProps, IDetails.InitialProps> = () => {
         });
     }, [router.query]);
 
+
     return (
         <Container>
             <Layout>
-                {detail.map((d: any, index) => {
+                {detail.map((d: any) => {
                     return (
-                        <div key={`beer-${index}`}>
+                        <div key="d.id">
                             <div className="details">
                                 <div className="titles">
                                     <h1>{d.name}</h1>
