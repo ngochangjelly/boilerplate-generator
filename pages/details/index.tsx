@@ -1,10 +1,26 @@
 // #region Global Imports
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+import { useSelector, useDispatch } from "react-redux";
+>>>>>>> Stashed changes
 // #endregion Global Imports
 
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
+<<<<<<< Updated upstream
+=======
+import { IStore } from "@Redux/IStore";
+import { DetailsActions } from "@Actions";
+=======
+import { useRouter } from "next/router";
+
+// #region Local Imports
+import { withTranslation } from "@Server/i18n";
+>>>>>>> 3dc8e550034a18bde7ddaf989c5f4e97e0f7406b
+>>>>>>> Stashed changes
 import { BeerDetailsService } from "@Services/API/BeerDetails";
 import { Container } from "@Styled/Home";
 import { useRouter } from "next/router";
@@ -17,6 +33,11 @@ import { ReduxNextPageContext, IDetails } from "@Interfaces";
 // #endregion Interface Imports
 
 export const Details: NextPage<IDetails.IProps, IDetails.InitialProps> = () => {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    const details = useSelector((state: IStore) => state.details);
+>>>>>>> Stashed changes
     const [detail, setDetail]: any[] = useState([]);
     const router = useRouter();
     const {
@@ -24,6 +45,7 @@ export const Details: NextPage<IDetails.IProps, IDetails.InitialProps> = () => {
     } = useRouter();
 
     useEffect(() => {
+<<<<<<< Updated upstream
         if (random === "true") {
             BeerDetailsService.GetRandomBeer().then(r => {
                 setDetail(r);
@@ -34,13 +56,37 @@ export const Details: NextPage<IDetails.IProps, IDetails.InitialProps> = () => {
             });
         }
     }, [id, random, router.query]);
+=======
+        BeerDetailsService.GetRandomBeer().then(r => {
+            setDetail(r);
+        });
+    }, []);
+=======
+    const [detail, setDetail]: any[] = useState([]);
+    const router = useRouter();
+    const { id } = router.query;
+
+    useEffect(() => {
+        console.log("TCL: id", router.query);
+        BeerDetailsService.GetRandomBeer().then(r => {
+            setDetail(r);
+        });
+    }, [router.query]);
+>>>>>>> 3dc8e550034a18bde7ddaf989c5f4e97e0f7406b
+>>>>>>> Stashed changes
 
     return (
         <Container>
             <Layout>
+<<<<<<< HEAD
                 {detail.map((d: any) => {
                     return (
                         <div key="d.id">
+=======
+                {detail.map((d: any, index) => {
+                    return (
+                        <div key={`beer-${index}`}>
+>>>>>>> 3dc8e550034a18bde7ddaf989c5f4e97e0f7406b
                             <div className="details">
                                 <div className="titles">
                                     <h1>{d.name}</h1>

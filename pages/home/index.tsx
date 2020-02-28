@@ -30,12 +30,22 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
         });
     }, []);
     const handleClick = () => {
+<<<<<<< Updated upstream
         router.push({ pathname: `/beer`, query: { random: "true" } });
+=======
+        router.push("/Details");
+>>>>>>> Stashed changes
     };
     return (
         <Container>
             <Heading text="Beer craft" />
             <Layout>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                <a href="/Details"> Get your random beer </a>
+=======
+>>>>>>> Stashed changes
                 <HeaderWrapper>
                     <BeerButton onClick={handleClick}>
                         <img
@@ -45,6 +55,10 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
                         />
                     </BeerButton>
                 </HeaderWrapper>
+<<<<<<< Updated upstream
+=======
+>>>>>>> 3dc8e550034a18bde7ddaf989c5f4e97e0f7406b
+>>>>>>> Stashed changes
                 {beers.map((beer: any) => {
                     return <Ticket key={beer.id} beer={beer} />;
                 })}
